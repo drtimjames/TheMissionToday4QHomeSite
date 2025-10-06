@@ -1,0 +1,107 @@
+<div class="hero">
+  <!-- Overlay text -->
+  <div class="overlay-text">
+    <h1>The Mission Today</h1>
+    <h2>Jesus came. He's coming again - to stay!</h2>
+  </div>
+
+  <!-- Four buttons -->
+  <a href="#" class="quad-button bon-top-left">Headline News</a>
+  <a href="#" class="quad-button bon-top-right">Bible Study</a>
+  <a href="#" class="quad-button bon-bottom-left">Live Chat</a>
+  <a href="#" class="quad-button bon-bottom-right">Online Store</a>
+</div>
+
+<style>
+.hero {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  /* Background image approach */
+  background-image: url("https://cdn.shopify.com/s/files/1/0754/3570/4578/files/Jesus_figure_holding_boys_hand_in_fog.png?v=1746574956");
+  background-size: cover;          /* fills entire screen */
+  background-position: center top; /* prioritize head at top */
+  background-repeat: no-repeat;
+  filter: brightness(1.2);
+  overflow: hidden;
+}
+
+/* Overlay text centered */
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+  color: white;
+  padding: 0 1rem;
+}
+
+.overlay-text h1 { font-size: 3rem; margin: 0; }
+.overlay-text h2 { font-size: 1.5rem; margin-top: 0.5rem; }
+
+/* Buttons */
+.quad-button {
+  position: absolute;
+  text-decoration: none;
+  padding: 12px 20px;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background-color 0.3s, color 0.3s;
+  z-index: 3; /* ensure above background */
+}
+
+/* Top buttons - charcoal-brown */
+.bon-top-left, .bon-top-right {
+  color: #4B3F2F;
+  border: 2px solid #4B3F2F;
+  background-color: transparent;
+}
+
+.bon-top-left:hover, .bon-top-right:hover {
+  background-color: #4B3F2F;
+  color: black;
+}
+
+/* Bottom buttons - gold */
+.bon-bottom-left, .bon-bottom-right {
+  color: #D4AF37;
+  border: 2px solid #D4AF37;
+  background-color: transparent;
+}
+
+.bon-bottom-left:hover, .bon-bottom-right:hover {
+  background-color: #D4AF37;
+  color: black;
+}
+
+/* Button positions */
+.bon-top-left { top: 12%; left: 12%; }
+.bon-top-right { top: 12%; right: 12%; }
+.bon-bottom-left { bottom: 12%; left: 12%; }
+.bon-bottom-right { bottom: 12%; right: 12%; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .overlay-text h1 { font-size: 2.5rem; }
+  .overlay-text h2 { font-size: 1.2rem; }
+  .quad-button { padding: 10px 18px; font-size: 0.95rem; }
+}
+
+@media (max-width: 768px) {
+  .overlay-text h1 { font-size: 2rem; }
+  .overlay-text h2 { font-size: 1rem; }
+  .quad-button { padding: 8px 14px; font-size: 0.9rem; }
+}
+
+@media (max-width: 480px) {
+  .overlay-text h1 { font-size: 1.5rem; }
+  .overlay-text h2 { font-size: 0.9rem; }
+  .quad-button { padding: 6px 10px; font-size: 0.8rem; }
+}
+</style>

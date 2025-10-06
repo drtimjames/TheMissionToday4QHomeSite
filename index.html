@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Mission Today</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      background-color: black;
+    }
+
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+      filter: brightness(1.2);
+    }
+
+    .overlay-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 2;
+    }
+
+    .overlay-text h1 { font-size: 3rem; margin: 0; }
+    .overlay-text h2 { font-size: 1.5rem; margin-top: 0.5rem; }
+
+    .quad-button {
+      position: absolute;
+      padding: 12px 20px;
+      font-weight: bold;
+      border-radius: 6px;
+      text-decoration: none;
+      z-index: 2;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .bon-top-left {
+      top: 12%;
+      left: 12%;
+      color: #3c2f2f;
+      border: 2px solid #3c2f2f;
+      background-color: rgba(0,0,0,0.0);
+    }
+
+    .bon-top-right {
+      top: 12%;
+      right: 12%;
+      color: #3c2f2f;
+      border: 2px solid #3c2f2f;
+      background-color: rgba(0,0,0,0.0);
+    }
+
+    .bon-bottom-left {
+      bottom: 12%;
+      left: 12%;
+      color: #D4AF37;
+      border: 2px solid #D4AF37;
+      background-color: rgba(0,0,0,0.6);
+    }
+
+    .bon-bottom-right {
+      bottom: 12%;
+      right: 12%;
+      color: #D4AF37;
+      border: 2px solid #D4AF37;
+      background-color: rgba(0,0,0,0.6);
+    }
+
+    .quad-button:hover {
+      background-color: #D4AF37;
+      color: black;
+    }
+
+    @media (max-width: 768px) {
+      .overlay-text h1 { font-size: 2rem; }
+      .overlay-text h2 { font-size: 1rem; }
+      .quad-button { padding: 8px 14px; font-size: 0.9rem; }
+    }
+
+    @media (max-width: 480px) {
+      .overlay-text h1 { font-size: 1.5rem; }
+      .overlay-text h2 { font-size: 0.9rem; }
+      .quad-button { padding: 6px 10px; font-size: 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <img src="https://cdn.shopify.com/s/files/1/0754/3570/4578/files/Jesus_figure_holding_boys_hand_in_fog.png?v=1746574956" alt="Jesus holding boy's hand">
+
+    <div class="overlay-text">
+      <h1>The Mission Today</h1>
+      <h2>Jesus came. He's coming again - to stay!</h2>
+    </div>
+
+    <a href="#" class="quad-button bon-top-left">Headline News</a>
+    <a href="#" class="quad-button bon-top-right">Bible Study</a>
+    <a href="#" class="quad-button bon-bottom-left">Live Chat</a>
+    <a href="#" class="quad-button bon-bottom-right">Online Store</a>
+  </div>
+</body>
+</html>
