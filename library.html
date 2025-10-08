@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Mission Today Journal – Bible</title>
+  <style>
+    body {
+      font-family: "Georgia", serif;
+      background-color: white;
+      margin: 0;
+      padding: 0;
+      color: #111;
+    }
+
+    /* Header area */
+    header {
+      text-align: center;
+      padding: 10px 0;
+      border-bottom: 2px solid #ddd;
+    }
+
+    header img {
+      width: 120px;
+      height: auto;
+      margin-bottom: 5px;
+    }
+
+    header h1 {
+      font-size: 28px;
+      margin: 0;
+    }
+
+    /* Navigation bar */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      background-color: white;
+      padding: 10px 0;
+      border-bottom: 1px solid #ccc;
+    }
+
+    nav a {
+      color: #002147; /* dark blue */
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Ticker section */
+    .ticker {
+      overflow: hidden;
+      white-space: nowrap;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      margin-bottom: 15px;
+    }
+
+    .ticker p {
+      display: inline-block;
+      animation: scroll-left 22s linear infinite;
+      color: #002147; /* dark blue */
+      font-weight: 500;
+      padding: 8px 0;
+      margin: 0;
+    }
+
+    @keyframes scroll-left {
+      from { transform: translateX(100%); }
+      to { transform: translateX(-100%); }
+    }
+
+    /* Page layout columns */
+    .content {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .sidebar {
+      border-right: 2px solid #ccc;
+      padding-right: 10px;
+    }
+
+    .sidebar iframe {
+      width: 100%;
+      height: 150px;
+      margin-bottom: 15px;
+      border: none;
+    }
+
+    .main {
+      padding-left: 20px;
+    }
+
+    .main h2 {
+      font-size: 22px;
+      margin-top: 0;
+    }
+
+    .continue-link {
+      display: inline-block;
+      margin-top: 30px;
+      text-decoration: none;
+      color: #002147;
+      font-weight: bold;
+    }
+
+    .continue-link:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      color: #555;
+      border-top: 1px solid #ccc;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+  <!-- Temple Image -->
+<div class="temple-image">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Second_Temple_3D_Model.png" alt="Second Temple in Jerusalem" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+</div>
+
+  <h1>The Mission Today Journal – Bible</h1>
+</header>
+
+
+  <!-- Navigation for Bible page (active page replaced by Home) -->
+  <nav>
+    <a href="news.html">News</a>
+    <a href="index.html">Home</a>
+    <a href="https://themissiontoday.substack.com/chat" target="_blank">Prayer</a>
+    <a href="page1.html">Store</a>
+  </nav>
+
+  <div class="ticker">
+    <p>
+      Israel and Lebanon tensions rise • Archaeologists uncover ancient scroll near Qumran • Christians in Nigeria call for peace •
+      New Bible translation project launched in Southeast Asia • Earthquake relief efforts continue in Turkey and Syria
+    </p>
+  </div>
+
+  <div class="content">
+    <div class="sidebar">
+  <iframe src="https://www.youtube.com/embed/sjQiZOQfWB0" title="YouTube video 1"></iframe>
+  <iframe src="https://www.youtube.com/embed/eGzprqZfw3U" title="YouTube video 2"></iframe>
+  <iframe src="https://www.youtube.com/embed/_7watmvWVN4" title="YouTube video 3"></iframe>
+</div>
+
+
+    <div class="main">
+      <h2>Teaching the Word with Clarity and Depth</h2>
+      <p>
+        Welcome to the Bible section — the heart of The Mission Today Journal. Here, we publish expository studies, essays, and reflections that explore the 
+        ancient context of Scripture and its relevance for today. Each article connects biblical theology, linguistic accuracy, and prophetic insight 
+        to help believers rediscover the truth beneath tradition.
+      </p>
+      <p>
+        The materials here draw upon decades of research and are aligned with the *Day of The Lord* project, providing a deeper framework for 
+        understanding the divine narrative of restoration.
+      </p>
+
+      <a class="continue-link" href="library2.html">Continue reading…</a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 The Mission Today Journal. All rights reserved.
+  </footer>
+
+</body>
+</html>

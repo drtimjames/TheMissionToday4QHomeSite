@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Mission Today – Live News</title>
+<style>
+  body {
+    font-family: Helvetica, Garamond, serif;
+    background: #fff;
+    color: #000;
+    margin: 0;
+  }
+
+  /* Header / Navigation */
+  header {
+    background: #fff;
+    text-align: center;
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+  }
+  header a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+  }
+  header a:hover {
+    color: #D4AF37;
+  }
+
+  /* Ticker */
+  #ticker-container {
+    overflow: hidden;
+    white-space: nowrap;
+    background: #fafafa;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    position: relative;
+  }
+  #ticker {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll 180s linear infinite;
+  }
+  #ticker:hover {
+    animation-play-state: paused;
+  }
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+  #ticker a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: #002147;
+    font-weight: 500;
+  }
+  #ticker a:hover {
+    text-decoration: underline;
+    color: #D4AF37;
+  }
+
+  /* Live News Grid */
+  .iframe-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    padding: 15px;
+  }
+  iframe {
+    width: 100%;
+    height: 315px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+
+  /* Responsive */
+  @media (max-width: 480px) {
+    .iframe-container { grid-template-columns: 1fr; }
+    #ticker { font-size: 0.9rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Header / Navigation -->
+<header>
+  <a href="index.html">Home</a>
+  <a href="library.html">Bible</a>
+  <a href="https://themissiontoday.substack.com/chat" target="_blank">Prayer</a>
+  <a href="index.html#store">Store</a>
+</header>
+
+<!-- News Ticker -->
+<div id="ticker-container">
+  <div id="ticker">Loading live headlines…</div>
+</div>
+
+<!-- Live News Iframes -->
+<div class="iframe-container">
+  <iframe src="https://www.youtube.com/embed/live_stream?channel=UC6Jcm9fV1b7ZJ0F6h5hZ4YQ" title="TV7 Israel News" allowfullscreen></iframe>
+  <iframe src="https://www.youtube.com/embed/live_stream?channel=UCp3C3Y0TZXJhK0A4UuC5Kpw" title="CBN News Live" allowfullscreen></iframe>
+  <iframe src="https://www.youtube.com/embed/live_stream?channel=UCknLrEdhRCp1aegoMqRaCZg" title="DW News Live" allowfullscreen></iframe>
+  <iframe src="https://www.youtube.com/embed/live_stream?channel=UC0p5jTq6Xx_DosDFxVXnWaQ" title="Euronews English" allowfullscreen></iframe>
+</div>
+
+<!-- Script: Fetch RSS and Update Ticker -->
+<script>
+const feeds = [
+  "https://www.christianheadlines.com/feed/",
+  "https://www.christiantoday.com/rss/news.xml",
+  "http://feeds.reuters.com/Reuters/worldNews",
+  "https://apnews.com/apf-topnews?format=rss"
+];
+
+// Fetch RSS and return HTML links
+async function fetchFeed(url){
+  try{
+    const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}`);
+    const data = await res.json();
+    if(data.items && data.items.length){
+      return data.items.map(i => `<a href="${i.link}" target="_blank">${i.title}</a>`).join(" • ");
+    }
+  }catch(e){
+    console.error("RSS fetch failed:", e);
+  }
+  return "";
+}
+
+// Update ticker with all feeds
+async function updateTicker(){
+  const results = await Promise.all(feeds.map(fetchFeed));
+  const tickerEl = document.getElementById("ticker");
+  tickerEl.innerHTML = results.filter(r => r).join(" • ") || "No headlines available.";
+}
+
+updateTicker();
+setInterval(updateTicker, 300000); // refresh every 5 minutes
+</script>
+
+</body>
+</html>
